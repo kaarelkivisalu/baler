@@ -73,6 +73,19 @@ def main():
         print_info(output_path, config)
     elif mode == "convert_with_hls4ml":
         helper.perform_hls4ml_conversion(output_path, config)
+    elif mode == "all":
+        check_enabled_profilers(
+            perform_training,
+            pytorch_profile,
+            energy_profile,
+            output_path,
+            config,
+            verbose,
+        )
+        perform_diagnostics(output_path, verbose)
+        perform_compression(output_path, config, verbose)
+        perform_decompression(output_path, config, verbose)
+        perform_plotting(output_path, config, verbose)
     else:
         raise NameError(
             "Baler mode "
