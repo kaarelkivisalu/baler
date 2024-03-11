@@ -2,12 +2,12 @@
 
 
 def set_config(c):
-    c.input_path = "workspaces/CMS_workspace/data/example_CMS_data_pt600.npz"
+    c.input_path = "workspaces/CMS_workspace/data/example_CMS_data.npz"
     c.data_dimension = 1
     c.compression_ratio = 1.6
     c.apply_normalization = True
     c.model_name = "AE"
-    c.epochs = 25
+    c.epochs = 1000
     c.lr = 0.001
     c.batch_size = 512
     c.early_stopping = True

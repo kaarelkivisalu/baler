@@ -1,5 +1,5 @@
-
 # === Configuration options ===
+
 
 def set_config(c):
     c.input_path                   = "workspaces/CMS_workspace/data/CMS_project_large_data.npz"
@@ -7,10 +7,9 @@ def set_config(c):
     c.compression_ratio            = 1.6
     c.apply_normalization          = True
     c.model_name                   = "AE"
-    # c.model_type                   = "dense"
-    c.epochs                       = 2
+    c.epochs                       = 10
     c.lr                           = 0.001
-    c.batch_size                   = 64
+    c.batch_size                   = 8192
     c.early_stopping               = True
     c.lr_scheduler                 = True
     c.save_error_bounded_deltas    = False
@@ -36,7 +35,7 @@ def set_config(c):
     c.emd                          = False
     c.l1                           = True
     c.activation_extraction        = True
-    c.deterministic_algorithm      = True
+    c.deterministic_algorithm      = False
     c.type_list = [
         "float64",
         "float64",
